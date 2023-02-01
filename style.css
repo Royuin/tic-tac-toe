@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
 @font-face {
   font-family: audiowide;
   src: url(font/Audiowide-Regular.ttf);
