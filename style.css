@@ -1,0 +1,13 @@
+div {
+  background-color: #bbb;
+  width: 100px;
+  height: 100px;
+  border: solid 5px #222;
+}
+
+body {
+  background-color: #222;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+}
