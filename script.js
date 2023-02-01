@@ -13,4 +13,7 @@ const gameboardModule = (() => {
   }
 
   makeBoard(gameboard.board);
+
+  gameboard.board[4].textContent = 'O';
+  gameboard.board[1].textContent = 'X';
 })();
