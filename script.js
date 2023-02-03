@@ -12,7 +12,7 @@ const gameboardModule = (() => {
     for (let i = 0; i < 9; i += 1) {
       const square = wrapper.appendChild(document.createElement('div'));
       square.classList = 'square';
-      square.dataset.number = i;
+      square.dataset.index = i;
       Array.push(square);
     }
   }
