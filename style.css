@@ -9,7 +9,7 @@
   src: url(font/Audiowide-Regular.ttf);
 }
 
-div {
+.gameboard-wrapper > div {
   background-color: #bbb;
   width: 100px;
   height: 100px;
@@ -18,11 +18,17 @@ div {
   place-items: center;
 }
 
-body {
-  background-color: #222;
+.gameboard-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
   gap: 5px;
+}
+
+body {
+  background-color: #222;
   font-family: audiowide, sans-serif;
+  display: grid;
+  place-items: center;
+  gap: 5rem;
 }
