@@ -8,6 +8,7 @@ const gameboardModule = (() => {
 
     for (let i = 0; i < 9; i += 1) {
       const square = body.appendChild(document.createElement('div'));
+      square.dataset.number = i;
       Array.push(square);
     }
   }
