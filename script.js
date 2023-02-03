@@ -5,9 +5,12 @@ const gameboardModule = (() => {
 
   function makeBoard(Array) {
     const body = document.querySelector('body');
+    const wrapper = document.createElement('div');
+    body.appendChild(wrapper);
+    wrapper.classList = 'gameboard-wrapper';
 
     for (let i = 0; i < 9; i += 1) {
-      const square = body.appendChild(document.createElement('div'));
+      const square = wrapper.appendChild(document.createElement('div'));
       square.dataset.number = i;
       Array.push(square);
     }
