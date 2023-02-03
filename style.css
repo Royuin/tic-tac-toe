@@ -23,6 +23,10 @@ h1 {
   place-items: center;
 }
 
+.gameboard-wrapper > div:hover {
+  background-color: #eee;
+}
+
 .gameboard-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 100px);
