@@ -42,6 +42,18 @@ const gameFunctions = (() => {
     });
   }
 
+  function squareSelectorLoop(currentPlayer) {
+    for (let i = 0; i < 9; i += 1) {
+      const currentSquare = gameboardModule[i];
+      if (
+        currentSquare.textContent !== 'X' &&
+        currentSquare.textContent !== 'O'
+      ) {
+        textEventListener(currentSquare, currentPlayer);
+      }
+    }
+  }
+
   startBtn.addEventListener('click', () => {
     const currentPlayer = player1;
   });
