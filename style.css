@@ -25,6 +25,7 @@ h1 {
 
 .gameboard-wrapper > div:hover {
   background-color: #eee;
+  cursor: pointer;
 }
 
 .gameboard-wrapper {
