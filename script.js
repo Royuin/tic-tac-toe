@@ -32,4 +32,10 @@ function playerFactory(name, marker) {
 const player1 = playerFactory('player1', 'X');
 const player2 = playerFactory('Player2', 'O');
 
-const gameFunctions = (() => {})();
+const gameFunctions = (() => {
+  const startBtn = document.querySelector('.start');
+
+  startBtn.addEventListener('click', () => {
+    const currentPlayer = player1;
+  });
+})();
