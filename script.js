@@ -56,5 +56,6 @@ const gameFunctions = (() => {
 
   startBtn.addEventListener('click', () => {
     const currentPlayer = player1;
+    squareSelectorLoop(currentPlayer);
   });
 })();
