@@ -31,3 +31,5 @@ function playerFactory(name, marker) {
 
 const player1 = playerFactory('player1', 'X');
 const player2 = playerFactory('Player2', 'O');
+
+const gameFunctions = (() => {})();
