@@ -35,6 +35,13 @@ const player2 = playerFactory('Player2', 'O');
 const gameFunctions = (() => {
   const startBtn = document.querySelector('.start');
 
+  function textEventListener(element, currentPlayer) {
+    element.addEventListener('click', () => {
+      const thisElement = element;
+      thisElement.textContent = currentPlayer.marker;
+    });
+  }
+
   startBtn.addEventListener('click', () => {
     const currentPlayer = player1;
   });
