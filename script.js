@@ -21,6 +21,13 @@ const gameboardModule = (() => {
 
   gameboard.board[4].textContent = 'O';
   gameboard.board[1].textContent = 'X';
+
+  return gameboard.board;
 })();
 
-function playerFactory(name, marker) {}
+function playerFactory(name, marker) {
+  return { name, marker };
+}
+
+const player1 = playerFactory('player1', 'X');
+const player2 = playerFactory('Player2', 'O');
