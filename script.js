@@ -16,7 +16,15 @@ const gameboardModule = (() => {
 
   makeBoard(board);
 
-  return board;
+  function updateGameboard() {
+    for (let i = 0; i < 9; i += 1) {
+      const currentSquare = document.querySelector(`[data-index='${i}']`);
+
+      currentSquare.textContent = board[i];
+    }
+  }
+
+  return { board, updateGameboard };
 })();
 
 function playerFactory(name, marker) {
