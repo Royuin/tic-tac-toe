@@ -1,9 +1,7 @@
 const gameboardModule = (() => {
-  const gameboard = {
-    board: [],
-  };
+  const board = [];
 
-  function makeBoard(Array) {
+  function makeBoard() {
     const body = document.querySelector('body');
     const wrapper = document.createElement('div');
     body.appendChild(wrapper);
@@ -13,16 +11,12 @@ const gameboardModule = (() => {
       const square = wrapper.appendChild(document.createElement('div'));
       square.classList = 'square';
       square.dataset.index = i;
-      Array.push(square);
     }
   }
 
-  makeBoard(gameboard.board);
+  makeBoard(board);
 
-  gameboard.board[4].textContent = 'O';
-  gameboard.board[1].textContent = 'X';
-
-  return gameboard.board;
+  return board;
 })();
 
 function playerFactory(name, marker) {
