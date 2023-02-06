@@ -35,9 +35,10 @@ const player1 = playerFactory('player1', 'X');
 const player2 = playerFactory('Player2', 'O');
 
 const gameFunctions = (() => {
+  let currentPlayer;
   const startBtn = document.querySelector('.start');
 
-  function textEventListener(element, currentPlayer, index) {
+  function textEventListener(element, index) {
     element.addEventListener('click', () => {
       if (
         gameboardModule.board[index] !== 'X' &&
@@ -46,20 +47,25 @@ const gameFunctions = (() => {
         gameboardModule.board[index] = currentPlayer.marker;
         gameboardModule.updateGameboard();
       }
+      if (currentPlayer === player1) {
+        currentPlayer = player2;
+      } else if (currentPlayer === player2) {
+        currentPlayer = player1;
+      }
     });
   }
 
-  function squareSelectorLoop(currentPlayer) {
+  function squareSelectorLoop() {
     let currentSquare;
     for (let i = 0; i < 9; i += 1) {
       currentSquare = document.querySelector(`[data-index='${i}']`);
       const index = currentSquare.dataset.index;
-      textEventListener(currentSquare, currentPlayer, index);
+      textEventListener(currentSquare, index);
     }
   }
 
   startBtn.addEventListener('click', () => {
-    const currentPlayer = player1;
+    currentPlayer = player1;
     squareSelectorLoop(currentPlayer);
   });
 })();
