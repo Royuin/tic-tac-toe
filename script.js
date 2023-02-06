@@ -46,11 +46,11 @@ const gameFunctions = (() => {
       ) {
         gameboardModule.board[index] = currentPlayer.marker;
         gameboardModule.updateGameboard();
-      }
-      if (currentPlayer === player1) {
-        currentPlayer = player2;
-      } else if (currentPlayer === player2) {
-        currentPlayer = player1;
+        if (currentPlayer === player1) {
+          currentPlayer = player2;
+        } else if (currentPlayer === player2) {
+          currentPlayer = player1;
+        }
       }
     });
   }
