@@ -57,6 +57,9 @@ const gameFunctions = (() => {
 
   function textEventListener(element, index) {
     element.addEventListener('click', () => {
+      if (gameInfo.winner !== undefined) {
+        return;
+      }
       if (
         gameboardModule.board[index] !== 'X' &&
         gameboardModule.board[index] !== 'O'
@@ -69,6 +72,7 @@ const gameFunctions = (() => {
           gameInfo.currentPlayer = player1;
         }
       }
+      checkForWinner();
     });
   }
 
