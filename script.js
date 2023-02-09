@@ -55,7 +55,7 @@ const gameFunctions = (() => {
     }
   }
 
-  function textEventListener(element, index) {
+  function takeTurnEventListener(element, index) {
     element.addEventListener('click', () => {
       if (gameInfo.winner !== undefined) {
         return;
