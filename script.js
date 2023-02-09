@@ -86,6 +86,10 @@ const gameFunctions = (() => {
   }
 
   startBtn.addEventListener('click', () => {
+    gameInfo.winner = undefined;
+    gameboardModule.board.length = 0;
+    gameboardModule.updateGameboard();
+    document.querySelector('.display').textContent = '';
     gameInfo.currentPlayer = player1;
     squareSelectorLoop(gameInfo.currentPlayer);
   });
