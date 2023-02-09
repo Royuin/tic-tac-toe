@@ -45,6 +45,7 @@ const gameFunctions = (() => {
     const display = document.querySelector('.display');
     const array = gameboardModule.board;
     const p1Marker = player1.marker;
+    const p2Marker = player2.marker;
     if (
       (array[0] === p1Marker &&
         array[1] === p1Marker &&
@@ -70,6 +71,33 @@ const gameFunctions = (() => {
       (array[6] === p1Marker && array[7] === p1Marker && array[8] === p1Marker)
     ) {
       gameInfo.winner = player1;
+      display.textContent = `${gameInfo.winner.name} wins!`;
+    }
+    if (
+      (array[0] === p2Marker &&
+        array[1] === p2Marker &&
+        array[2] === p2Marker) ||
+      (array[0] === p2Marker &&
+        array[4] === p2Marker &&
+        array[8] === p2Marker) ||
+      (array[0] === p2Marker &&
+        array[3] === p2Marker &&
+        array[6] === p2Marker) ||
+      (array[1] === p2Marker &&
+        array[4] === p2Marker &&
+        array[7] === p2Marker) ||
+      (array[2] === p2Marker &&
+        array[5] === p2Marker &&
+        array[8] === p2Marker) ||
+      (array[2] === p2Marker &&
+        array[4] === p2Marker &&
+        array[6] === p2Marker) ||
+      (array[3] === p2Marker &&
+        array[4] === p2Marker &&
+        array[5] === p2Marker) ||
+      (array[6] === p2Marker && array[7] === p2Marker && array[8] === p2Marker)
+    ) {
+      gameInfo.winner = player2;
       display.textContent = `${gameInfo.winner.name} wins!`;
     }
   }
