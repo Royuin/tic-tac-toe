@@ -45,11 +45,7 @@ const gameFunctions = (() => {
     const display = document.querySelector('.display');
     const array = gameboardModule.board;
     const p1Marker = player1.marker;
-    if (
-      array[0] === p1Marker &&
-      array[1] === p1Marker &&
-      array[2] === p1Marker
-    ) {
+    if (array[0] && array[1] && array[2] === p1Marker) {
       gameInfo.winner = player1;
       display.textContent = `${gameInfo.winner.name} wins!`;
     }
