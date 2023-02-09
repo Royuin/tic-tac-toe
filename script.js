@@ -41,6 +41,20 @@ const gameFunctions = (() => {
   };
   const startBtn = document.querySelector('.start');
 
+  function checkForWinner() {
+    const display = document.querySelector('.display');
+    const array = gameboardModule.board;
+    const p1Marker = player1.marker;
+    if (
+      array[0] === p1Marker &&
+      array[1] === p1Marker &&
+      array[2] === p1Marker
+    ) {
+      gameInfo.winner = player1;
+      display.textContent = `${gameInfo.winner.name} wins!`;
+    }
+  }
+
   function textEventListener(element, index) {
     element.addEventListener('click', () => {
       if (
