@@ -81,7 +81,7 @@ const gameFunctions = (() => {
     for (let i = 0; i < 9; i += 1) {
       currentSquare = document.querySelector(`[data-index='${i}']`);
       const index = currentSquare.dataset.index;
-      textEventListener(currentSquare, index);
+      takeTurnEventListener(currentSquare, index);
     }
   }
 
