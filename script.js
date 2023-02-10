@@ -154,3 +154,16 @@ const gameFunctions = (() => {
     squareSelectorLoop(gameInfo.currentPlayer);
   });
 })();
+
+const formModule = (() => {
+  const addPlayersBtn = document.querySelector('.add-players');
+  const form = document.querySelector('form');
+  addPlayersBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (form.style.display !== 'none') {
+      form.style.display = 'none';
+    } else {
+      form.style.display = 'grid';
+    }
+  });
+})();
