@@ -31,8 +31,23 @@ function playerFactory(name, marker) {
   return { name, marker };
 }
 
-const player1 = playerFactory('player1', 'X');
-const player2 = playerFactory('Player2', 'O');
+let player1;
+let player2;
+
+const addPlayersBtn = document.querySelector('.add-players');
+const form = document.querySelector('form');
+addPlayersBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const p1 = document.getElementById('p1').value;
+  const p2 = document.getElementById('p2').value;
+  player1 = playerFactory(p1, 'X');
+  player2 = playerFactory(p2, 'O');
+  if (form.style.display !== 'none') {
+    form.style.display = 'none';
+  } else {
+    form.style.display = 'grid';
+  }
+});
 
 const gameFunctions = (() => {
   const gameInfo = {
@@ -152,18 +167,5 @@ const gameFunctions = (() => {
     document.querySelector('.display').textContent = '';
     gameInfo.currentPlayer = player1;
     squareSelectorLoop(gameInfo.currentPlayer);
-  });
-})();
-
-const formModule = (() => {
-  const addPlayersBtn = document.querySelector('.add-players');
-  const form = document.querySelector('form');
-  addPlayersBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (form.style.display !== 'none') {
-      form.style.display = 'none';
-    } else {
-      form.style.display = 'grid';
-    }
   });
 })();
