@@ -46,3 +46,12 @@ body {
 .display {
   color: #eee;
 }
+
+form {
+  color: #eee;
+  display: grid;
+  gap: 10px;
+  background-color: #555;
+  padding: 20px;
+  margin: 20px 0 20px 0;
+}
