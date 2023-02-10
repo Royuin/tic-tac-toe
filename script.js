@@ -99,6 +99,19 @@ const gameFunctions = (() => {
     ) {
       gameInfo.winner = player2;
       display.textContent = `${gameInfo.winner.name} wins!`;
+    } else if (
+      (array[0] === p1Marker || array[0] === p2Marker) &&
+      (array[1] === p1Marker || array[1] === p2Marker) &&
+      (array[2] === p1Marker || array[2] === p2Marker) &&
+      (array[3] === p1Marker || array[3] === p2Marker) &&
+      (array[4] === p1Marker || array[4] === p2Marker) &&
+      (array[5] === p1Marker || array[5] === p2Marker) &&
+      (array[6] === p1Marker || array[6] === p2Marker) &&
+      (array[7] === p1Marker || array[7] === p2Marker) &&
+      (array[8] === p1Marker || array[8] === p2Marker)
+    ) {
+      gameInfo.winner = null;
+      display.textContent = 'Tie game!';
     }
   }
 
