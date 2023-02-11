@@ -36,18 +36,6 @@ let player2;
 
 const addPlayersBtn = document.querySelector('.add-players');
 const form = document.querySelector('form');
-addPlayersBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  const p1 = document.getElementById('p1').value;
-  const p2 = document.getElementById('p2').value;
-  player1 = playerFactory(p1, 'X');
-  player2 = playerFactory(p2, 'O');
-  if (form.style.display !== 'none') {
-    form.style.display = 'none';
-  } else {
-    form.style.display = 'grid';
-  }
-});
 
 const gameFunctions = (() => {
   const gameInfo = {
@@ -160,12 +148,29 @@ const gameFunctions = (() => {
     }
   }
 
-  startBtn.addEventListener('click', () => {
+  addPlayersBtn.addEventListener('click', () => {
+    if (form.style.display !== 'none') {
+      form.style.display = 'none';
+    } else {
+      form.style.display = 'grid';
+    }
+  });
+
+  function start() {
+    const p1 = document.getElementById('p1').value;
+    const p2 = document.getElementById('p2').value;
+    player1 = playerFactory(p1, 'X');
+    player2 = playerFactory(p2, 'O');
     gameInfo.winner = undefined;
     gameboardModule.board.length = 0;
     gameboardModule.updateGameboard();
     document.querySelector('.display').textContent = '';
     gameInfo.currentPlayer = player1;
     squareSelectorLoop(gameInfo.currentPlayer);
+  }
+  startBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    start();
+    form.style.display = 'none';
   });
 })();
