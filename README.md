@@ -12,3 +12,7 @@ One of the main goals with this project was to put as much code as possible in a
 - Users can put their own name of choose
 - Displays who the winner or if it's a tie game
 - DOM manipulation for displaying updates to the board
+
+## What was learned
+
+Following The Odin Project curriculum I was learning about taking code out of the global scope utilizing factory functions and the module pattern (IIFE). It was very informative to learn about keeping as much code as you can out to avoid confilcts, variable overrides, and better security. The project was a great way to apply what was learned to help solidify the knowledge.
