@@ -16,3 +16,12 @@ One of the main goals with this project was to put as much code as possible in a
 ## What was learned
 
 Following The Odin Project curriculum I was learning about taking code out of the global scope utilizing factory functions and the module pattern (IIFE). It was very informative to learn about keeping as much code as you can out to avoid confilcts, variable overrides, and better security. The project was a great way to apply what was learned to help solidify the knowledge.
+
+## TO DO
+
+- Take even more code out of global scope
+- Add a color scheme to page (maybe purple scheme)
+- Allow a game to be started with names inputted by user. Would set default to player1 and player2
+- Add restart button after game is over so user doesnt have to open form again
+- Mobile Responsiveness
+- Add option to play against AI
